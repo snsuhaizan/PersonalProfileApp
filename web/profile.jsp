@@ -1,5 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="bean.Profile"%>
 
+<%
+    Profile profile = (Profile) request.getAttribute("profile");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,37 +42,43 @@
 
         <p>
             <b>Name:</b>
-            <%= request.getAttribute("name") %>
+            <%= profile.getName() %>
         </p>
 
         <p>
             <b>Student ID:</b>
-            <%= request.getAttribute("studentId") %>
+            <%= profile.getStudentId() %>
         </p>
 
         <p>
             <b>Program:</b>
-            <%= request.getAttribute("program") %>
+            <%= profile.getProgram() %>
         </p>
 
         <p>
             <b>Email:</b>
-            <%= request.getAttribute("email") %>
+            <%= profile.getEmail() %>
         </p>
 
         <p>
             <b>Hobbies:</b>
-            <%= request.getAttribute("hobbies") %>
+            <%= profile.getHobbies() %>
         </p>
 
         <p>
             <b>Introduction:</b>
-            <%= request.getAttribute("intro") %>
+            <%= profile.getIntro() %>
         </p>
 
+        <hr>
+
+        <a href="ProfileController" class="btn btn-success">
+        View All Profiles
+        </a>
     </div>
 
 </div>
 
 </body>
 </html>
+
